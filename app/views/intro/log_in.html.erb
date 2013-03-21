@@ -1,0 +1,24 @@
+<%= form_for(:authentication, :url => {:action => 'menu'}) do |f| %>
+
+    <div>
+      <% if !flash[:notice].blank? %>
+          <% flash[:notice].each { |error_msg| %> <p><%= error_msg %></p> <% } %>
+      <% end %>
+      <table>
+        <tr>
+          <th><%= f.label(:username, 'Username') %></th>
+          <td><%= f.text_field(:username) %></td>
+        </tr>
+
+        <tr>
+          <th><%= f.label(:password, 'Password') %></th>
+          <td>
+            <%= f.text_field(:password) %></td>
+        </tr>
+      </table>
+      <%= submit_tag('Sign in') %>
+    </div>
+<% end %>
+
+
+
