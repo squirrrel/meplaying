@@ -10,6 +10,8 @@ class IntroController < ApplicationController
 
   def log_in
     @authentication = Intro.new
+    @authentication.username ||= "Username"
+    @authentication.password ||= "Password"
   end
 
 

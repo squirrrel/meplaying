@@ -2,21 +2,22 @@
 
     <div>
       <% if !flash[:notice].blank? %>
-          <% flash[:notice].each { |error_msg| %> <p><%= error_msg %></p> <% } %>
+          <% flash[:notice].each { |error_msg| %> <p><%= error_msg %></p>
+          <% } %>
       <% end %>
-      <table>
-        <tr>
-          <th><%= f.label(:username, 'Username') %></th>
-          <td><%= f.text_field(:username) %></td>
-        </tr>
+      <div class='login_box'>
+        <table>
+          <tr>
+            <td><%= f.text_field(:username) %></td>
+          </tr>
 
-        <tr>
-          <th><%= f.label(:password, 'Password') %></th>
-          <td>
-            <%= f.text_field(:password) %></td>
-        </tr>
-      </table>
-      <%= submit_tag('Sign in') %>
+          <tr>
+            <td>
+              <%= f.text_field(:password, :default_value => 'Password') %></td>
+          </tr>
+        </table>
+        <%= submit_tag('Sign in', :class => 'button') %>
+      </div>
     </div>
 <% end %>
 
