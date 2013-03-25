@@ -38,6 +38,17 @@ class Intro < ActiveRecord::Base
   end
 
 
+  def self.privileged?(params={})
+
+    params[:username].include?(/^moskaln$/) ? (true) : false
+
+    # params[:authentication]
+
+
+  end
+
 end
 
 #todo: find custom css styles
+#todo: check whether a user can access other than log_in page by typing in a needed url without their credentials
+

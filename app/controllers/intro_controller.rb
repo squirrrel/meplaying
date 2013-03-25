@@ -18,7 +18,8 @@ class IntroController < ApplicationController
   def menu
     creds_test = Intro.authenticate(params[:authentication])
     if  creds_test == true
-      render('menu')
+
+      Intro.privileged?(params[:authentication]) ? (render 'menu'): render 'menu_non_priv'
     else
      flash[:notice] = creds_test
 

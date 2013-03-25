@@ -2,26 +2,29 @@
 <div>
   <table>
 
-    <tr>
-      <td>
-        <%= link_to('To-Do List', {:action => '##'}, :class => 'menu_module') %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= link_to('Knowledge base', {:action => '##'}, :class => 'menu_module') %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= link_to('CookBook', {:action => '##'}, :class => 'menu_module') %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= link_to('News Feed', {:action => '##'}, :class => 'menu_module') %>
-      </td>
-    </tr>
+    <%= {'To-Do List' => '##', 'Knowledge base' => '##', 'CookBook' => '##', 'News Feed' => '##'}.each do |key, value| %>
+        <tr>
+          <td>
+            <%= link_to(key, {:action => value}, :class => 'menu_module') %>
+          </td>
+        </tr>
+    <% end %>
+
+    <!--<tr>-->
+    <!--<td>-->
+    <!--<%#= link_to('Knowledge base', {:action => '##'}, :class => 'menu_module') %>-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>-->
+    <!--<%#= link_to('CookBook', {:action => '##'}, :class => 'menu_module') %>-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>-->
+    <%#= link_to('News Feed', {:action => '##'}, :class => 'menu_module') %>
+    <!--</td>-->
+    <!--</tr>-->
 
   </table>
 </div>
