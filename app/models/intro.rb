@@ -29,10 +29,19 @@ class Intro < ActiveRecord::Base
     arr << Intro.count(:conditions => "username = '#{params[:username]}'")
 
     #todo: add messages for failures others than validations defined before
-    if web_input.valid? && user__found && hashed_pass == user__found.password && arr.each { |num| num == 1 }
+    if web_input.valid? && user__found && params[:password] && hashed_pass == user__found.password && arr.each { |num| num == 1 }
       true
     else
+
+      if params[:username]
+
+      elsif params[:password]
+
+       elsif web_input.valid? == false
       web_input.errors[:username] + web_input.errors[:password]
+         elsif
+         end
+
     end
 
   end
